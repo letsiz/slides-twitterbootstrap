@@ -1,123 +1,138 @@
-/*
- 	@license Copyright (c) 2011 Brian Cavalier
-	LICENSE: see the LICENSE.txt file. If file is missing, this file is subject
-	to the MIT License at: http://www.opensource.org/licenses/mit-license.php.
- */
-
 @import "../basic.css";
 
 html {
-	background: #000;
-	background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 1000, from(#222), to(#000));
-	background-image: -moz-radial-gradient(center 45deg, circle closest-side, #222 0, #000 1000px);
+  overflow: hidden;
 }
 
-footer p {
-	color: #666;
+body {
+  background: #fff;
+  color: #000;
 }
 
 #slide-container {
-	margin-top: 4em;
-	background: none;
+  margin-top: 4em;
+}
+
+.slide-view-module {
+  position: static;
+  overflow: visible;
 }
 
 .slide {
-	font-size: 250%;
-	color: #eee;
+
+  font-size: 220%;
+  transition: none !important;/* fade.css */
 }
 
 .slide h1 {
-	font-size: 3.2em;
-	font-weight: bold;
-	color: #666;
-	margin-bottom: 0;
-	letter-spacing: -.08em;
-	text-rendering: optimizeLegibility;
-}
-
-.slide h1 em {
-	color: #ccc;
-	font-style: normal;
-}
-
-.slide h1.logo {
-	background: url(../../../im/hovercraft-logotype-800.png) no-repeat 50% 50%;
-	text-indent: -9999px;
+  font-size: 2em;
+  color: #a279e1;
+  margin: -.25em 0 0;
+  letter-spacing: -.08em;
+  text-rendering: optimizeLegibility;
 }
 
 .slide h2 {
-	color: #ccc;
-	margin-top: 0;
-	margin-left: .5em;
+  color: #8eb5bb;
+  font-size: 1.2em;
+  letter-spacing: -.04em;
+  margin-top: 0;
 }
 
-.slide p {
-	color: #eee;
-	margin-left: 2em;
-}
-
-.slide em {
-	font-style: italic;
-	color: #fff;
-}
-
-.slide ul > ul {
-	font-size: 90%;
+.slide ul ul {
+  font-size: 90%;
 }
 
 .slide li {
-	line-height: 1em;
-	margin-bottom: .75em;
+  line-height: 1em;
+  margin: .75em 0;
 }
 
-.slide .slide-layout-title {
-	padding-top: 2em;
+.slide em {
+  color: inherit;
+  font-style: italic;
 }
 
-.slide-layout-long-title h1 {
-	font-size: 2.5em;
-	letter-spacing: -.04em;
+.slide a {
+  color: #8eb5bb;
+  text-decoration: none;
 }
 
-.slide-layout-huge h1 {
-	color: #ccc;
-	font-size: 6em;
-	letter-spacing: -.04em;
-	text-align: center;
+.slide a:hover,
+.slide a:focus {
+  color: inherit;
+  text-decoration: underline;
 }
 
-.slide-layout-tiny h1 {
-	color: #ccc;
-	font-size: 1em;
-	font-weight: normal;
-	text-align: center;
-	margin-top: 3em;
+.slide .button {
+  background: #8eb5bb;
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+.slide .button:hover,
+.slide .button:active {
+  text-decoration: none;
+}
+
+.slide img:not(.fullsize) {
+  max-width: 100%;
+}
+
+.slide .fullsize {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -640px;
+  width: 1280px;
+}
+
+.progress {
+  background: #a279e1;
+  height: 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fullsize + .progress {
+  display: none;
+}
+
+.slide-layout-title {
+  padding: 5em 0 0 3em;
+}
+
+.slide-layout-title h1 {
+  font-size: 3em;
 }
 
 @media screen and (max-device-width: 480px) {
-	.slide {
-		font-size: 90%;
-	}
-	
-	.slide-container {
-		margin-top: 1em;
-	}
+  .slide {
+    font-size: 90%;
+  }
 
-	.slide .slide-layout-title {
-		padding-top: 0;
-	}
-	
-	.slide p {
-		font-size: 1.25em;
-		margin-left: .25em;
-	}
-	
-	.slide h2 {
-		margin-left: .25em;
-	}
+  .slide-container {
+    margin-top: 1em;
+  }
 
-	.slide li {
-		font-size: 1.25em;
-	}
+  .slide-layout-title {
+    padding-top: 0;
+  }
 
+  .slide h2 {
+    margin-left: .25em;
+  }
+
+  .slide p {
+    font-size: 1.25em;
+    margin-left: .25em;
+  }
+
+  .slide li {
+    font-size: 1.25em;
+  }
 }
